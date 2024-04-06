@@ -1,0 +1,28 @@
+<launch>
+
+  <!-- Launch Rviz with our settings -->
+  <node type="rviz" name="rviz" pkg="rviz" args="-d $(find me5413_world)/rviz/Fast_lio_mapping.rviz" output="log" respawn="true"/>
+
+
+  <rosparam command="load" file="$(find fast_lio)/config/me5413_FL.yaml" />
+
+  <param name="feature_extract_enable" type="bool" value="0"/>
+  <param name="point_filter_num" type="int" value="4"/>
+  <param name="max_iteration" type="int" value="3" />
+  <param name="filter_size_surf" type="double" value="0.5" />
+  <param name="filter_size_map" type="double" value="0.5" />
+  <param name="cube_side_length" type="double" value="1000" />
+  <param name="runtime_pos_log_enable" type="bool" value="0" />
+
+  <!-- Launch fast_lio mapping -->
+  <node pkg="fast_lio" type="fastlio_mapping" name="laserMapping" output="screen" />
+
+  <!-- Add rqt_robot_steering -->
+  <node name="rqt_robot_steering" pkg="rqt_robot_steering" type="rqt_robot_steering" />
+
+</launch>
+
+
+
+
+
