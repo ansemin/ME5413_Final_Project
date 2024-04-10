@@ -108,7 +108,7 @@ Launch the gazebo with the project world
 
 ```she
 cd /YOUR_PATH/ME5413_Final_Project
-source source devel/setup.bash
+source devel/setup.bash
 roslaunch me5413_world world.launch
 ```
 
@@ -179,3 +179,36 @@ evo_ape bag EVO_evalue_2024-04-07-15-08-23.bag /gazebo/ground_truth/state /Odome
 ```
 
 ![EVO_result](src/me5413_world/media/EVO_result.png)
+
+
+
+## 3. Navigation
+
+### 3.1 launch navigation node
+
+```shell
+cd /YOUR_PATH/ME5413_Final_Project/src
+source devel/setup.bash
+roslaunch me5413_world world.launch
+```
+
+In another Terminal 
+
+```shell
+cd /YOUR_PATH/ME5413_Final_Project/src
+source devel/setup.bash
+roslaunch me5413_world navigation.launch
+```
+
+Howere if you meet any navigation failed problem. You can just download the [navigation part](https://github.com/YUJ0E/Autonomous_Mobile_Robotics_Navigation) which works fine.
+
+![Navigation_1](src/me5413_world/media/Navigation_1.png)
+
+![Navigation_2](src/me5413_world/media/Navigation_2.png)
+
+![Navigation_3](src/me5413_world/media/Navigation_3.png)
+
+
+
+
+
